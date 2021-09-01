@@ -1,8 +1,0 @@
-#!/bin/bash
-# bash commands to compile code
-# input:  src/*
-# output: bin/*
-
-DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
-
-javac -d "${DIR}/bin" "${DIR}/src"/*
