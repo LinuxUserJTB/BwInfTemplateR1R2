@@ -1,0 +1,9 @@
+#!/bin/bash
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." >/dev/null 2>&1 && pwd)"
+bash "${DIR}/scripts/clean"
+mapfile -t names < "${DIR}/tasknames"
+for task in ${names[@]}; do
+	cp -r "${DIR}/A0_XXX" "${DIR}/${task}"
+	mkdir -p "${DIR}/${task}"/{src,bin,testinput,testoutput}
+done
+mkdir -p "${DIR}/output"
