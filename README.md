@@ -4,14 +4,14 @@ Template für die Bearbeitung der ersten beiden Runden des [Bundeswettbewerbs In
 
 ## Inhalt
 
-- `/A0_XXX/`: Beispieldaten für eine Aufgabe
-- `/A0_XXX/bin`: Ordner für kompilierte Dateien (bei Scriptsprachen leer lassen)
-- `/A0_XXX/src`: Ordner für Quelltext
-- `/A0_XXX/testinput`: Ordner für Testeingaben
-- `/A0_XXX/testoutput`: Ordner für Testausgaben
-- `/A0_XXX/compile`: Script zum Kompilieren des Programms für die Aufgabe
-- `/A0_XXX/DOC.md`: Dokumentation im Markdown-Format ([Version von pandoc](https://pandoc.org/MANUAL.html#pandocs-markdown))
-- `/A0_XXX/run`: Script zum Ausführen (benötigt für automatisches Testen)
+- `/demo/`: Beispieldaten für eine Aufgabe
+- `/demo/bin`: Ordner für kompilierte Dateien (bei Scriptsprachen leer lassen)
+- `/demo/src`: Ordner für Quelltext
+- `/demo/testinput`: Ordner für Testeingaben
+- `/demo/testoutput`: Ordner für Testausgaben
+- `/demo/compile`: Script zum Kompilieren des Programms für die Aufgabe
+- `/demo/DOC.md`: Dokumentation im Markdown-Format ([Version von pandoc](https://pandoc.org/MANUAL.html#pandocs-markdown))
+- `/demo/run`: Script zum Ausführen (benötigt für automatisches Testen)
 - `/output/`: Ordner für ZIP-Inhalt
 - `/scripts/`: Bashscripte zur Automatisierung
 - `/scripts/clean`: leert `/output`
@@ -24,17 +24,21 @@ Template für die Bearbeitung der ersten beiden Runden des [Bundeswettbewerbs In
 - `/tasknames`: Namen der Aufgaben, die bearbeitet werden
 - `/template.tex`: LaTeX-Template, in das die Markdown-Dateien eingebettet werden
 
-# Anpassung
+## Anpassung / Benutzung
 
 1. alle Aufgabennamen festlegen und in `tasknames` eintragen
-1. `A0_XXX` für jede Aufgabe kopieren
+1. `/scripts/setup` ausführen
 1. `/scripts/download_testcases` ausführen
+	- Beispiel für die Eingabe: https://bwinf.de/fileadmin/user_upload/parkplatz0.txt (bis parkplatz5.txt)
+	- `https://bwinf.de/fileadmin/user_upload` ist der Basis-URL
+	- `parkplatz` ist der Code-Name
+	- `0` ist der erste Testfall, `5` der letzte
 1. `compile` und `run` für jede Aufgabe schreiben
 1. Metadaten im Header der Markdowndateien anpassen
 1. Dokumentation und Programme ausarbeiten
 1. `makeall` ausführen und einsenden
 
-# Abhängigkeiten
+## Abhängigkeiten
 
 - bash
 - [pandoc](https://pandoc.org)
