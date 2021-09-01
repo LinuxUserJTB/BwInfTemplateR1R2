@@ -1,0 +1,9 @@
+#!/bin/bash
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." >/dev/null 2>&1 && pwd)"
+TSK="${DIR}/${1}"
+for inf in "${TSK}/testinput"/*; do
+	outf="${TSK}/testoutput/$(basename "${inf}")"
+	touch "${outf}"
+	bash "${TSK}/run" < "${inf}" > "${outf}"
+done
+cp -r "${TSK}/test"{input,output} "${DIR}/output/${1}"

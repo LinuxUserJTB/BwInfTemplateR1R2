@@ -1,0 +1,12 @@
+#!/bin/bash
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." >/dev/null 2>&1 && pwd)"
+rm -rf "${DIR}"/output/*
+mapfile -t names < "${DIR}/tasknames"
+for task in $names; do
+	rm -rf "${DIR}/${task}/bin"/*
+	rm -rf "${DIR}/${task}/testoutput"/*
+done
+zipf="${DIR}/Einsendung.zip"
+if [ -f "${zipf}" ]; then
+	rm "${zipf}"
+fi

@@ -1,0 +1,11 @@
+#!/bin/bash
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
+bash "${DIR}/makepdf" $1&
+bash "${DIR}/copyprog" $1
+ec=$?
+if [ $ec -ne 0 ]; then
+	echo "ERROR ${ec} on task ${1}"
+else
+	bash "${DIR}/testtask" "${1}"
+fi
+wait

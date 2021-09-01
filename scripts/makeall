@@ -1,0 +1,11 @@
+#!/bin/bash
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." >/dev/null 2>&1 && pwd)"
+bash "${DIR}/scripts/clean"
+mapfile -t names < "${DIR}/tasknames"
+for task in $names; do
+	bash "${DIR}/scripts/maketask" $task&
+done
+wait
+pushd "${DIR}/output"
+zip -T -r -9 "${DIR}/Einsendung.zip" *
+popd

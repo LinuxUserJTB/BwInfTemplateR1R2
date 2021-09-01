@@ -1,0 +1,26 @@
+#!/bin/bash
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." >/dev/null 2>&1 && pwd)"
+TSK="${DIR}/${1}"
+SRC="${TSK}/src"
+BIN="${TSK}/bin"
+bash "${TSK}/compile"
+ec=$?
+if [ $ec -ne 0 ] ; then
+	exit $ec
+fi
+SRCTGT="${DIR}/output/${1}"
+BINTGT="${SRCTGT}"
+[ -n "$(find "${BIN}" -maxdepth 0 -empty)" ]
+hasBin=$?
+if [ $hasBin -eq 0 ]; then
+	SRCTGT="${SRCTGT}/Programm"
+else
+	SRCTGT="${SRCTGT}/Quelltext"
+	BINTGT="${BINTGT}/Programm"
+fi
+mkdir -p "${SRCTGT}"
+cp "${SRC}"/* "${SRCTGT}"
+if [ $hasBin -ne 0 ]; then
+	mkdir -p "${BINTGT}"
+	cp "${BIN}"/* "${BINTGT}"
+fi

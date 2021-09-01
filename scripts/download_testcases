@@ -1,0 +1,34 @@
+#!/bin/bash
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." >/dev/null 2>&1 && pwd)"
+echo -n "Basis-URL: "
+read urlbase
+mapfile -t names < "${DIR}/tasknames"
+codes=()
+first=()
+numtc=()
+for n in $names; do
+	echo "Aufgabe: ${n}"
+	echo -n "Aufgabencodename: "
+	read code
+	echo -n "Erster Testfall: "
+	read fst
+	echo -n "Letzter Testfall: "
+	read lst
+	codes+=($code)
+	first+=($fst)
+	numtc+=($lst)
+done
+i=0
+while [ $i -lt ${#names[@]} ]; do
+	j=${first[$i]}
+	dir="${DIR}/${names[$i]}/testinput"
+	mkdir -p $dir
+	pushd $dir
+	while [ $j -le ${numtc[$i]} ]
+	do
+		wget "${urlbase}/${codes[$i]}${j}.txt"
+		j=$(($j+1))
+	done
+	popd
+	i=$(($i+1))
+done

@@ -1,0 +1,87 @@
+\PassOptionsToPackage{unicode=true}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor}
+\documentclass[12pt,ngerman,a4paper]{scrartcl}
+
+\usepackage{amssymb,amsmath}
+\usepackage{unicode-math}
+\usepackage{libertine}
+\usepackage{inconsolata}
+\usepackage{parcolumns}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\pagestyle{fancy}
+\fancyhead[L]{$TASK$}
+\fancyhead[R]{Teilnahme-ID: $ID$}
+\fancyfoot[C]{\thepage{}/\pageref*{LastPage}}
+\fancypagestyle{plain}{
+\renewcommand{\headrulewidth}{0pt}
+\fancyhf{}
+\fancyfoot[C]{\thepage{}/\pageref*{LastPage}}
+}
+\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\AtBeginDocument{\renewcommand{\setminus}{\mathbin{\backslash}}}
+\setmainfont{Linux Libertine O}
+\setsansfont{Linux Libertine O}
+\setmonofont{inconsolata}
+
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+
+\usepackage{fancyvrb}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+\hypersetup{pdftitle={$TASK$},pdfauthor={$AUTHOR$},pdflang={de-DE},colorlinks=true,linkcolor=Blue,filecolor=Blue,citecolor=Blue,urlcolor=Blue,breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+
+\VerbatimFootnotes % allows verbatim text in footnotes
+\usepackage{listings}
+\newcommand{\passthrough}[1]{#1}
+$highlighting-macros$
+\usepackage{longtable,booktabs}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+
+\usepackage[normalem]{ulem}
+% avoid problems with \sout in headers with hyperref:
+\pdfstringdefDisableCommands{\renewcommand{\sout}{}}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\setcounter{secnumdepth}{2}
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage[ngerman]{babel}
+
+\title{$TASK$}
+\subtitle{Teilnahme-ID: $ID$}
+\author{$AUTHOR$}
+\usepackage[ngerman,useregional,showseconds=false,showzone=false]{datetime2}
+
+\begin{document}
+
+\date{\today}
+\maketitle
+\hypersetup{linkcolor=Black}
+\tableofcontents
+\newpage
+$body$
+\end{document}
