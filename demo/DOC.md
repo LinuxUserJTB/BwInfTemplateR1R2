@@ -1,12 +1,12 @@
 ---
 AUTHOR: 'Vorname Nachname'
 ID:     '00000'
-TASK:   'Aufgabe 0: XXX'
+TASK:   'Aufgabe 1: Demo'
 ...
 
 # Annahmen
 
-- $$ 0 = 0 $${#eq:Annahme_1}
+$$ 0 = 0 $${#eq:Annahme_1}
 
 # Lösungsidee
 
@@ -16,11 +16,7 @@ $$ 0 = 0 ⇒ 1 = 1 $${#eq:A0a_Ergebnis}
 
 ## Allgemeine Problemstellung
 
---
-
 `TODO: allgemeine Problemstellung formulieren!`
-
-[Ein Link](https://duckduckgo.com)
 
 ## Teilaufgabe b)
 
@@ -28,8 +24,7 @@ $$ 0 = 0 ⇔ 1 = 1 $${#eq:A0b_Ergebnis}
 
 # Korrektheit
 
-$$ 0 = 0 ∧ 0 + 1 = 0 + 1 = 1 $${#eq:Beweis1}
-$$ ⇒ 1 = 1 $${#eq:Beweis2}
+$$ 0 = 0 ∧ 0 + 1 = 0 + 1 = 1 ⇒ 1 = 1 $${#eq:Beweis}
 
 # Laufzeitanalyse
 
@@ -37,7 +32,7 @@ Das nicht vorhandene Programm hat eine Laufzeitkomplexität in $\mathcal{O}(1)$.
 
 # Umsetzung
 
-Die Umsetzung ist nicht (erfolgreich) erfolgt (So sieht »normaler« Text aus).
+Die Umsetzung ist nicht (erfolgreich) erfolgt.
 
 # Beispiele
 

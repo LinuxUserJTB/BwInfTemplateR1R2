@@ -2,4 +2,4 @@
 # bash commands to run program in bin/
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 
-java -cp "${DIR}/bin" A0
+java -cp "${DIR}/bin" Demo
