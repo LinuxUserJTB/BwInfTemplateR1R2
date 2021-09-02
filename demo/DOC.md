@@ -1,5 +1,6 @@
 ---
-AUTHOR: 'Vorname Nachname'
+AUTHOR: [ 'Vorname1 Nachname1', 'Vorname2 Nachname2' ]
+NAME:   'Team_null'
 ID:     '00000'
 TASK:   'Aufgabe 1: Demo'
 ...
