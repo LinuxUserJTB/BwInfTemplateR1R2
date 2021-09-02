@@ -32,16 +32,17 @@ Template für die Bearbeitung der ersten beiden Runden des [Bundeswettbewerbs In
 	- `/scripts/makepdf` bearbeiten und in der dritten Zeile `templateR1.tex` durch `templateR2.tex` ersetzen
 	- Inhalt von `/A0_XXX/DOCR2.md` in `/A0_XXX/DOC.md` kopieren
 1. `/A0_XXX/DOCR2.md` wird nun nicht mehr gebraucht
-1. alle Aufgabennamen festlegen und in `tasknames` eintragen
+1. alle Aufgabennamen festlegen und in `tasknames` eintragen (einer pro Zeile)
+1. Eigene Daten (Teamname, -ID, Informationen, die für jede Aufgabe gelten) in den Metadaten im Header von `/A0_XXX/DOC.md` anpassen
 1. `/scripts/setup` ausführen
-1. die Ordner `/demo/` und `A0_XXX` werden nun nicht mehr gebraucht
+1. die Ordner `/demo/` und `/A0_XXX/` werden nun nicht mehr gebraucht
 1. `/scripts/download_testcases` ausführen
-	- Beispiel für die Eingabe: https://bwinf.de/fileadmin/user_upload/parkplatz0.txt (bis parkplatz5.txt)
+	- Beispiel für die Eingabe: `https://bwinf.de/fileadmin/user_upload/parkplatz0.txt` (bis parkplatz5.txt)
 	- `https://bwinf.de/fileadmin/user_upload` ist der Basis-URL
 	- `parkplatz` ist der Code-Name
 	- `0` ist der erste Testfall, `5` der letzte
-1. `/Ax_???/compile` und `/A?_???/run` für jede Aufgabe schreiben
-1. Metadaten im Header der Markdowndateien anpassen
+1. `/A?_???/compile` und `/A?_???/run` für jede Aufgabe schreiben
+1. Aufgabenspezifische Daten (Aufgabenname, Bearbeiter) im Header der Markdowndateien anpassen
 1. Dokumentation und Programme ausarbeiten
 1. `makeall` ausführen und einsenden
 
