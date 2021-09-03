@@ -32,7 +32,7 @@ Template für die Bearbeitung der ersten beiden Runden des [Bundeswettbewerbs In
 	- `/scripts/makepdf` bearbeiten und in der dritten Zeile `templateR1.tex` durch `templateR2.tex` ersetzen
 	- Inhalt von `/A0_XXX/DOCR2.md` in `/A0_XXX/DOC.md` kopieren
 1. `/A0_XXX/DOCR2.md` wird nun nicht mehr gebraucht
-1. alle Aufgabennamen festlegen und in `tasknames` eintragen (einer pro Zeile)
+1. alle Aufgabennamen festlegen und in `/tasknames` eintragen (einer pro Zeile)
 1. Eigene Daten (Teamname, -ID, Informationen, die für jede Aufgabe gelten) in den Metadaten im Header von `/A0_XXX/DOC.md` anpassen
 1. `/scripts/setup` ausführen
 1. die Ordner `/demo/` und `/A0_XXX/` werden nun nicht mehr gebraucht
@@ -44,10 +44,11 @@ Template für die Bearbeitung der ersten beiden Runden des [Bundeswettbewerbs In
 1. `/A?_???/compile` und `/A?_???/run` für jede Aufgabe schreiben
 1. Aufgabenspezifische Daten (Aufgabenname, Bearbeiter) im Header der Markdowndateien anpassen
 1. Dokumentation und Programme ausarbeiten
-1. `makeall` ausführen und einsenden
+1. `/scripts/makeall` ausführen und einsenden
 
 ## Abhängigkeiten
 
 - bash
 - [pandoc](https://pandoc.org)
 - [pandoc-eqnos](https://github.com/tomduck/pandoc-eqnos)
+- [pandoc-fignos](https://github.com/tomduck/pandoc-fignos)
